@@ -1,15 +1,15 @@
-Debian packages for installing commotion-wireless on a Raspberry Pi
-courtesy of Pirates in Teepees: http://besneatte.blogspot.com
-
 We'll begin with assuming you have a Raspberry Pi up and running with Raspbian installed, latest firmware (rpi-update), a working understanding of the command line and an internet connection. I am installing on a headless RPi Rev.A and all configuration will be done from the command line via a console cable.  I also like to run all my processes using the application "screen" so I can (re)connect to it from elsewhere if needed. SSH will work until you mesh, then you can only ssh from within the mesh.
 
 Also, you will need a compatible wifi interface. I used the panda usb dongle with antenna:
 
-Panda Mid-Range 150Mbps 802.11B/G/N 2.4GHz WiFi USB adapter 
+Panda Mid-Range 150Mbps 802.11B/G/N 2.4GHz WiFi USB adapter
 
 List of devices here:
 
 https://wiki.commotionwireless.net/doku.php?id=development_resources:router:hardware_compatibility_list
+
+Also might be a good idea to come hang out with us on freenode IRC, channel #commotion. I go by shamanon.
+
 
 Step 1: Update the RPi to Jessie
 
@@ -60,12 +60,23 @@ $ cd ~
 $ mkdir Commotion
 $ cd Commotion
 
-Get the files and unzip:
+You have a few options:
 
-$ wget https://commotion-wireless-raspberry-pi.googlecode.com/archive/.tar.gz
-$ tar -xzvf commotion-wireless-raspberry-pi.tar.gz
-$ cd commotion-wireless-raspberry-pi
-$ sudo dpkg -i serval*.deb 
+Get the files from my server and unzip:
+
+$ wget http://artofconfusion.com/commotion-pi/commotion-pi.tar.bz2
+$ tar -xzvf commotion-pi.tar.bz2
+$ cd commotion-pi
+
+Or you can checkout/download the files from google code
+
+svn checkout http://commotion-wireless-raspberry-pi.googlecode.com/svn/ commotion-wireless-raspberry-pi-read-only
+
+or 
+
+https://code.google.com/p/commotion-wireless-raspberry-pi/source/browse/
+
+$ sudo dpkg -i serval*.deb
 
 if this fails on dependencies, do this
 
